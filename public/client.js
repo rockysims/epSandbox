@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			loses: inputLosesElem.value
 		};
 
-		fetch('/api/records/add', {
+		fetch('/api/records', {
 			method: 'post',
 			body: JSON.stringify(recordData),
 			headers: { "Content-Type": "application/json" }
@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	loadButtonElem.addEventListener('click', () => {
-		fetch('/api/records')
+		fetch('/api/records', {
+			method: 'get'
+		})
 			.then(res => res.json())
 			.then(data => {
 				let html = '';
@@ -44,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const bodyData = {
 			fileName: inputFileElem.value
 		};
-		fetch('/api/records/remove', {
+		
+		fetch('/api/records', {
 			method: 'delete',
 			body: JSON.stringify(bodyData),
 			headers: { "Content-Type": "application/json" }

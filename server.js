@@ -8,17 +8,15 @@ const app = express();
 app.use(express.static('public'))
 app.use(bodyParser.json());
 
-if (!fs.existsSync('data/')) {
-	fs.mkdirSync('data');
-}
+if (!fs.existsSync('data')) fs.mkdirSync('data');
 
-app.post('/api/records/add', (req, res) => {
+app.post('/api/records', (req, res) => {
 	const bodyDataJson = JSON.stringify(req.body);
 	
 	const now = new Date(Date.now());
 	const nowStr = now.toUTCString() + ' ' + now.getMilliseconds();
 	const fileName = nowStr + '.txt';
-	const filePath = `data/${fileName}`;
+	const filePath = 'data' + fileName;
 	fs.writeFileSync(filePath, bodyDataJson);
 
 	res.json({
@@ -29,7 +27,7 @@ app.post('/api/records/add', (req, res) => {
 app.get('/api/records', (req, res) => {
 	const data = [];
 
-	const fileNames = fs.readdirSync('data/');
+	const fileNames = fs.readdirSync('data');
 	for (let fileName of fileNames) {
 		const filePath = 'data/' + fileName;
 		const textData = fs.readFileSync(filePath, 'utf8');
@@ -41,13 +39,13 @@ app.get('/api/records', (req, res) => {
 	res.json(data);
 });
 
-app.delete('/api/records/remove', (req, res) => {
+app.delete('/api/records', (req, res) => {
 	const bodyData = req.body;
 	const fileName = bodyData.fileName;
 	const filePath = `data/${fileName}`;
 	fs.unlinkSync(filePath);
 
-	const files = fs.readdirSync('data/');
+	const files = fs.readdirSync('data');
 	res.json({
 		fileCount: files.length
 	});
