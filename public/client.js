@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	const inputDataElem = document.querySelector('.inputData');
 	const inputWinsElem = document.querySelector('.inputWins');
 	const inputLosesElem = document.querySelector('.inputLoses');
-	const saveButtonElem = document.querySelector('.saveButton');
+	const postButtonElem = document.querySelector('.postButton');
 	const loadButtonElem = document.querySelector('.loadButton');
 	const divElem = document.querySelector('.outputDiv');
 	const inputFileElem = document.querySelector('.inputFile');
 	const deleteButtonElem = document.querySelector('.deleteButton');
 
-	saveButtonElem.addEventListener('click', () => {
+	postButtonElem.addEventListener('click', () => {
 		const recordData = {
 			data: inputDataElem.value,
 			wins: inputWinsElem.value,
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const bodyData = {
 			fileName: inputFileElem.value
 		};
-		
+
 		fetch('/api/records', {
 			method: 'delete',
 			body: JSON.stringify(bodyData),
