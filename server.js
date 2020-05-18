@@ -8,6 +8,10 @@ const app = express();
 app.use(express.static('public'))
 app.use(bodyParser.json());
 
+if (!fs.existsSync('data/')) {
+	fs.mkdirSync('data');
+}
+
 app.post('/api/records/add', (req, res) => {
 	const bodyDataJson = JSON.stringify(req.body);
 	
