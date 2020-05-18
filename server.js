@@ -16,7 +16,7 @@ app.post('/api/records', (req, res) => {
 	const now = new Date(Date.now());
 	const nowStr = now.toUTCString() + ' ' + now.getMilliseconds();
 	const fileName = nowStr + '.txt';
-	const filePath = 'data' + fileName;
+	const filePath = 'data/' + fileName;
 	fs.writeFileSync(filePath, bodyDataJson);
 
 	res.json({
