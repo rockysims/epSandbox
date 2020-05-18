@@ -1,10 +1,28 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require('express');
+const bodyParser = require('body-parser');
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+const port = process.env.PORT || 5000;
+const app = express();
+
+app.use(express.static('public'))
+app.use(bodyParser.json());
+
+app.post('/api/records/add', (req, res) => {
+	const bodyData = req.body;
+	console.log('TODO: add ', bodyData);
+});
+
+app.get('/api/records', (req, res) => {
+	res.json([
+		{
+			text: 'first',
+			ratio: 0.66
+		},
+		{
+			text: 'second',
+			ratio: 0.64
+		}
+	]);
+});
+
+app.listen(port, () => console.log(`Listening on port ${port}...`));
