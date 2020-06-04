@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Record = require("./models/Record");
 
 //mongo setup
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 });
 mongoose.connection.on('error', err => console.error('MongoDB connection error:', err));
