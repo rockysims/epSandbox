@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const postButtonElem = document.querySelector('.postButton');
 	const loadButtonElem = document.querySelector('.loadButton');
 	const divElem = document.querySelector('.outputDiv');
-	const inputFileElem = document.querySelector('.inputFile');
+	const inputIdElem = document.querySelector('.inputId');
 	const deleteButtonElem = document.querySelector('.deleteButton');
 
 	postButtonElem.addEventListener('click', () => {
@@ -20,9 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			body: JSON.stringify(recordData),
 			headers: { "Content-Type": "application/json" }
 		})
-			.then(res => res.json())
+			.then(res => {
+				return res.json().then(data => {
+					if (res.ok) return data;
+					else throw data;
+				});
+			})
 			.then(data => {
-				divElem.innerHTML = 'Saved as ' + data.fileName;
+				divElem.innerHTML = 'Saved record: ' + JSON.stringify(data);
+			})
+			.catch(reason => {
+				divElem.innerHTML = 'Error: ' + JSON.stringify(reason);
 			});
 	});
 
@@ -30,21 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		fetch('/api/records', {
 			method: 'get'
 		})
-			.then(res => res.json())
+			.then(res => {
+				return res.json().then(data => {
+					if (res.ok) return data;
+					else throw data;
+				});
+			})
 			.then(data => {
-				let html = '';
+				let html = 'Found records:';
 				for (let datum of data) {
 					html += '<div>';
 					html += 	JSON.stringify(datum);
 					html += '</div>';
 				}
 				divElem.innerHTML = html;
+			})
+			.catch(reason => {
+				divElem.innerHTML = 'Error: ' + JSON.stringify(reason);
 			});
 	});
 
 	deleteButtonElem.addEventListener('click', () => {
 		const bodyData = {
-			fileName: inputFileElem.value
+			id: inputIdElem.value
 		};
 
 		fetch('/api/records', {
@@ -52,9 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			body: JSON.stringify(bodyData),
 			headers: { "Content-Type": "application/json" }
 		})
-			.then(res => res.json())
+			.then(res => {
+				return res.json().then(data => {
+					if (res.ok) return data;
+					else throw data;
+				});
+			})
 			.then(data => {
-				divElem.innerHTML = 'Deleted file. ' + data.fileCount + ' remaining.';
+				divElem.innerHTML = 'Deleted record: ' + JSON.stringify(data);
+			})
+			.catch(reason => {
+				divElem.innerHTML = 'Error: ' + JSON.stringify(reason);
 			});
 	});
 });
