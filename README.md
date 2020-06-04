@@ -1,1 +1,0 @@
-Demo of express + mongodb (create, list, delete)
