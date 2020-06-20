@@ -1,0 +1,179 @@
+/*
+ Theme Name:   Digital Ambiance
+ Template:		Divi
+ Text Domain:  divi-child
+*/
+
+
+/*@font-face {
+  font-family: 'KlavikaLight-OSF';
+  src: url('fonts/KlavikaLight-OSF.eot?#iefix') format('embedded-opentype'),  url('fonts/KlavikaLight-OSF.otf')  format('opentype'),
+	     url('fonts/KlavikaLight-OSF.woff') format('woff'), url('KlavikaLight-OSF.ttf')  format('truetype'), url('fonts/KlavikaLight-OSF.svg#KlavikaLight-OSF') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: KlavikaLight-OSF !important;
+	font-weight: 100;
+	letter-spacing: .03em;
+}*/
+
+/* from additional styles */
+
+/*Remove Sidebar*/
+#main-content .container:before {
+	display: none;
+}
+	
+.et_pb_section, #main-content {
+	background-color: #020202 !important;
+}
+.et-db #et-boc .et-l .et_pb_section_6.et_pb_section {
+	background-color: #020202 !important;
+}
+
+#top-menu-nav>ul>li>a:hover {
+	color: #8e10b3 !important;
+	opacity: 1;
+}
+
+#top-menu a {
+	transition: all .65s ease-in-out !important;
+	font-weight: lighter;
+}
+
+.et_pb_blog_grid h2 a:hover {
+	color: #7834A7;
+	transition: all .4s ease-in-out !important;
+}
+
+.et_pb_text a:hover {
+	color: #fff;
+}
+
+h1.entry-title {
+	font-weight: lighter;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters ul {
+    padding: 0;
+    list-style-type: none!important;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.et_pb_portfolio_filter.et_pb_portfolio_filter_all {
+	display: none;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters ul li:nth-of-type(2) a {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a  {
+	border-radius: 0px !important;
+	border-top: 1px #fff solid;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a, .et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+		transition: all .4s ease-in-out !important;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li {
+	font-size: 26px;
+}
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a:hover {
+	background-color: transparent;
+	color: #7834A7 !important;
+}
+ 
+.et_pb_post .post-content p {
+display: none;
+}
+
+.single #main-content .container {
+	padding-top: 20px;
+}
+
+.pagination {
+    clear: both;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.pagination a {
+	color: #fff;
+}
+
+.da-services-tag h1 {
+	margin: 20px 0px 20px 0px;
+}
+p.et_pb_gallery_caption:hover {
+    opacity: 1;
+}
+
+@media only screen and ( min-width: 768px ) {
+ 
+.three-column-grid .et_pb_grid_item {
+width: 32% !important;
+	float: left;
+margin: 0 .5% 0 .5%  !important;
+	min-height: 380px;
+}
+ 
+.three-column-grid .et_pb_grid_item:nth-child(3n) {
+margin-right: 0 !important;
+}
+
+.et_pb_filterable_portfolio.three-column-grid .et_pb_grid_item:nth-child(4n+1) {
+clear: unset !important;
+}
+	
+	.da-services-tag .three-column-grid .et_pb_grid_item {
+			padding-bottom: 20px;
+	}
+	
+.da-services-tag .three-column-grid .et_pb_grid_item:nth-child(3n+1) {
+		clear: both !important;
+	}
+	
+	
+	.da-services-tag .three-column-grid .et_pb_grid_item h2.entry-title {
+		font-weight: lighter !important;
+	}
+	
+}
+
+/* Robin css */
+
+.btn-default {
+	background-color: #8310b3 !important;
+	background-image: linear-gradient(180deg,rgba(211, 188, 216, 0.2) 0%,#35003d 100%)!important;
+	color: white !important;
+	border-width: 0px!important;
+	font-size: 20px!important;
+	font-weight: 300!important;
+	padding: 6px 22px!important;
+	font-family: Open Sans,Arial,sans-serif !important;
+	border-radius: 0 !important;
+	line-height: 34px!important;
+}
+.btn-default:hover {
+	background-image: linear-gradient(180deg,rgba(211,188,216,0.61) 0%,#310063 100%)!important;
+}
+
+
+/* end additional styles */
+
+
+.test-border {
+    border: 5px solid #cc7438;
+}
