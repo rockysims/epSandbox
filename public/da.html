@@ -29,14 +29,44 @@
 
 
 		
-		<link rel="icon" href="https://www.digitalambiance.com/wp-content/uploads/2015/11/cropped-digital-ambiance-logo-512x512-150x150.png" sizes="32x32">
-		<link rel="icon" href="https://www.digitalambiance.com/wp-content/uploads/2015/11/cropped-digital-ambiance-logo-512x512-300x300.png" sizes="192x192">
-		<link rel="apple-touch-icon" href="https://www.digitalambiance.com/wp-content/uploads/2015/11/cropped-digital-ambiance-logo-512x512-300x300.png">
-		<meta name="msapplication-TileImage" content="https://www.digitalambiance.com/wp-content/uploads/2015/11/cropped-digital-ambiance-logo-512x512-300x300.png">
-		<link rel="stylesheet" id="et-divi-customizer-global-cached-inline-styles" href="./Products - Digital Ambiance_files/et-divi-customizer-global-15925992538354.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)">
-		<style>[data-columns]::before{visibility:hidden;position:absolute;font-size:1px;}</style>
-		<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+		<style type="text/css" id="et-social-custom-css">
+		</style>
+		<style type="text/css">img#wpstats{display:none}</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<noscript>
+			<style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
+		</noscript>
+		<style type="text/css" id="custom-background-css">
+			body.custom-background { background-color: #020202; }
+		</style>
+		<script>
+			jQuery(function($){
+			$('#about_header .header-content-container .header-content .et_pb_button_one.et_pb_button').attr('target', '_blank');
+			});
+		</script>
+		<!-- allows us to close accordion items on click (default is one accordion item must be open) -->
+		<script>
+			jQuery(function($){
+			 $('.et_pb_toggle_title').click(function(){
+			  var $toggle = $(this).closest('.et_pb_toggle');
+			  if (!$toggle.hasClass('et_pb_accordion_toggling')) {
+			   var $accordion = $toggle.closest('.et_pb_accordion');
+			   if ($toggle.hasClass('et_pb_toggle_open')) {
+			    $accordion.addClass('et_pb_accordion_toggling');
+			    $toggle.find('.et_pb_toggle_content').slideToggle(700, function() { 
+			     $toggle.removeClass('et_pb_toggle_open').addClass('et_pb_toggle_close');
+			
+			    });
+			   }
+			   setTimeout(function(){ 
+			    $accordion.removeClass('et_pb_accordion_toggling'); 
+			   }, 750);
+			  }
+			 });
+			});
+		</script>
 
+		
 
 
 
