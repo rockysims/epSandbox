@@ -29,33 +29,17 @@
 
 
 		
+		<style type="text/css" id="et-social-custom-css">
+		</style>
+		<style type="text/css">img#wpstats{display:none}</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<noscript>
+			<style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
+		</noscript>
+		<style type="text/css" id="custom-background-css">
+			body.custom-background { background-color: #020202; }
+		</style>
 		
-		<script>
-			jQuery(function($){
-			$('#about_header .header-content-container .header-content .et_pb_button_one.et_pb_button').attr('target', '_blank');
-			});
-		</script>
-		<!-- allows us to close accordion items on click (default is one accordion item must be open) -->
-		<script>
-			jQuery(function($){
-			 $('.et_pb_toggle_title').click(function(){
-			  var $toggle = $(this).closest('.et_pb_toggle');
-			  if (!$toggle.hasClass('et_pb_accordion_toggling')) {
-			   var $accordion = $toggle.closest('.et_pb_accordion');
-			   if ($toggle.hasClass('et_pb_toggle_open')) {
-			    $accordion.addClass('et_pb_accordion_toggling');
-			    $toggle.find('.et_pb_toggle_content').slideToggle(700, function() { 
-			     $toggle.removeClass('et_pb_toggle_open').addClass('et_pb_toggle_close');
-			
-			    });
-			   }
-			   setTimeout(function(){ 
-			    $accordion.removeClass('et_pb_accordion_toggling'); 
-			   }, 750);
-			  }
-			 });
-			});
-		</script>
 
 		
 
